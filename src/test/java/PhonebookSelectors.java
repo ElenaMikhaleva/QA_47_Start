@@ -16,21 +16,26 @@ public class PhonebookSelectors {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        FirstTest.pause(5);
+        WebElement btnHeaderHome = driver.findElement(By.cssSelector("a[href='/home']"));
+        btnHeaderHome.click();
+        FirstTest.pause(3);
+        WebElement btnHeaderAbout = driver.findElement(By.cssSelector("a[href='/about']"));
+        btnHeaderAbout.click();
+        FirstTest.pause(3);
         WebElement btnHeaderLogIn = driver.findElement(By.cssSelector("a[href=\"/login\"]"));
         btnHeaderLogIn.click();
 
-        FirstTest.pause(5); // метод из FirstTest
+        FirstTest.pause(3);
         WebElement inputEmail = driver.findElement(By.cssSelector("input[name='email']"));
         inputEmail.sendKeys("elenam@gmail.com");
-
-        FirstTest.pause(5);
+        FirstTest.pause(3);
         WebElement inputPassword = driver.findElement(By.cssSelector("input[name='password']"));
         inputPassword.sendKeys("Password$1");
-
-        FirstTest.pause(5);
+        FirstTest.pause(3);
         WebElement btnLogIn = driver.findElement(By.cssSelector("button[name='login']"));
         btnLogIn.click();
 
+        FirstTest.pause(5);
+        driver.quit();
     }
 }
